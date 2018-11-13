@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<title>Diner's Reservation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/w3.css">
+<link rel="stylesheet" href="stylesheets/css.css">
+<link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+<link rel="stylesheet" href="stylesheets/font-awesome.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<link rel="stylesheet" href="stylesheets/emot.css">
+<script src="js/jquery-2.1.4.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+
+<style>
+  body{font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>
+    <a href="#restaurant" class="w3-bar-item w3-button w3-padding-large w3-hide-small"></a>
+    <a href="#reservation" class="w3-bar-item w3-button w3-padding-large w3-hide-small"></a>
+    <a href="#search" class="w3-bar-item w3-button w3-padding-large w3-hide-small"></a>
+    <a href="#rates" class="w3-bar-item w3-button w3-padding-large w3-hide-small"></a>
+    <a href="SignUp.html" class="w3-bar-item w3-button w3-right w3-padding-large w3-hide-small">LOGOUT</a>
+    <a href="#manage" class="w3-bar-item w3-button w3-right w3-padding-large w3-hide-small">RESERVATION REQUEST</a>
+    <a href="#viewrate" onclick="view_ratings()" class="w3-bar-item w3-button w3-padding-large w3-hide-small"></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#restaurant" class="w3-bar-item w3-button w3-padding-large">RESTAURANT</a>
+  <a href="#reservation" class="w3-bar-item w3-button w3-padding-large">RESERVATION</a>
+  <a href="#search" class="w3-bar-item w3-button w3-padding-large">SEARCH</a>
+  <a href="#rates" class="w3-bar-item w3-button w3-padding-large">RATE</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="img/diners.jpg" style="width:100%">
+    <div class="w3-display-bottom middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="img/view1.jpg" style="width:110%">
+    <div class="w3-display-bottom middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="img/reserve.jpg" style="width:100%">
+    <div class="w3-display-bottom middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+    </div>
+  </div>
+
+  <!-- My Reservation Section -->
+  <div class="w3-black w3-padding-64" id="manage">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">RESERVATION REQUEST LIST</h2>
+        <style>
+            #table {
+        color: black;
+        background-color: #FCEC5F;
+        border-radius: 1%;
+        padding: 20px;
+
+    }
+
+    #table1 {
+        color: black;
+        background-color: #FCEC5F;
+        border-radius: 1%;
+        padding: 20px;
+    }
+
+    .dataTables_wrapper {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #343a40;
+        font-size: 15px;
+    }
+
+    th {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #343a40;
+        font-size: 15px;
+        width: 100px;
+    }
+
+    .table .thead-dark th {
+        font-family: "Lato", sans-serif;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: black;
+    }
+
+    .table1 .thead-dark th {
+        font-family: "Lato", sans-serif;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: black;
+    }
+
+    .table1 .thead-dark th {
+        font-family: "Lato", sans-serif;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: black;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    .container1 {
+        height: auto;
+    }
+
+    a {
+      font-family: "Lato", sans-serif;
+      font-size: 15px;
+    }
+        </style>
+
+          <div class="container-fluid p-0">
+              <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="...">
+                  <div style="width: 100%">
+                      <div class="col-lg-12 text-center">
+                          <h2 class="section-heading text-uppercase"style="color: #fcec5f; font-size: 20px;">
+                              Manage Reservation Requests
+                          </h2>
+                      </div>
+
+                      <div id="table" style="background-color: white; border-radius: 20px;">
+                          <table id="maintable" class="table table-hover" style="color: black; font-size: 16px; size: 20px; text-align: center;" >
+
+                          </table>
+                        <br>
+
+                      </div>
+                      <br>
+                      <div class="col-lg-12 text-center">
+                          <h2 class="section-heading text-uppercase" style="color: #fcec5f; font-size: 20px;">
+                              Today's Customers
+                          </h2>
+                      </div>
+
+                      <div id="table1" style="background-color: white; border-radius: 10px;">
+                          <table id="verifiedtable" class="table table-hover">
+
+                          </table>
+                      </div>
+                  </div>
+              </section>
+           </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--  <script src="js/jquery.min.js"></script>-->
+<script src="app.js"></script>
+
+<script src="js/1.js"></script>
+
+
+<!-- End Page Content -->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <p class="w3-medium"></p>
+    <p class="w3-medium"></p>
+  <p class="w3-medium"></p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+</script>
+</body>
+
+<script>
+    var myTable;
+    var dataset2 = [];
+    $(document).ready(function () {
+            $.ajax({
+                url: 'http://127.0.0.1:5000/reservations',
+                type: "GET",
+                dataType: "json",
+                crossDomain: true,
+                success: function(resp) {
+                    if (resp.status  === 'ok') {
+                        for ( var i = 0; i < resp.entries.length; i++) {
+                            var dataset1 = [];
+
+                            dataset1.push(resp.entries[i].diner);
+                            dataset1.push(resp.entries[i].cus_name);
+                            dataset1.push(resp.entries[i].attendees);
+                            dataset1.push(resp.entries[i].res_date);
+                            dataset1.push(resp.entries[i].res_time);
+                            dataset1.push(resp.entries[i].cus_num);
+                            dataset1.push("<button class='btn btn-success' style='padding: 2px 5px' id='approve'><span class='fa fa-check' style='text-align: center'></span></button>&nbsp;<button id='decline' class='btn btn-danger btn-xs' style='padding: 2px 5px'><span class='fa fa-remove'></span></button>");
+                            dataset2.push(dataset1);
+                          console.log(resp.entries[i].cus_num);
+                        }
+                        myTable =  $('#maintable').DataTable({
+                            data: dataset2,
+                            columns : [
+                                {title: "Restaurant"},
+                                {title: "Name"},
+                                {title: "Attendees"},
+                                {title: "Date"},
+                                {title: "Time"},
+                                {title: "Number"},
+                                {title: "Action"}
+                                ]
+                        });
+                    }
+                }
+            });
+
+            $('body').on('click', '#approve', function () {
+                var row = $(this).parents('tr')[0];
+                data = myTable.row(row).data();
+                global1 = data[7];
+                global3 = data[6];
+                approve(global1, global3);
+            });
+
+            $("body").on('click', '#decline', function () {
+                var row = $(this).parents('tr')[0];
+                data = myTable.row(row).data();
+                global2 = data[7];
+                global3 = data[6];
+                decline(global2, global3);
+            });
+    });
+
+    function approve(g, f) {
+        alert("You have approved the reservation request " + g);
+        var public_id = localStorage.getItem('public_id');
+        var userid;
+        var vis_id;
+        var response = $("#response").val();
+        $.ajax({
+            url: "http://127.0.0.1:5000/reserve_accept/",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+                'public_id': public_id,
+                'vis_id': f,
+                'userid': g,
+                'response': 'yes'
+            }),
+            method: "POST",
+            dataType: "json",
+            crossDomain: true,
+            headers: {
+                'x-access-token': tokens
+            },
+            success: function (resp) {
+                alert(resp.message);
+                window.location.reload();
+            },
+            error: function () {
+                alert('Server error! Click ok to reload!');
+                window.location.reload();
+            }
+        })
+    }
+
+    function decline(g, f) {
+        alert("You have rejected the reservation request " + g);
+        var public_id = localStorage.getItem('public_id');
+        var userid;
+        var vis_id;
+        var response = $("#response").val();
+
+        $.ajax({
+            url: "http://127.0.0.1:5000/reserve_accept/",
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+                'public_id': public_id,
+                'vis_id': f,
+                'userid': g,
+                'response': 'no'
+            }),
+
+            method: "POST",
+            dataType: "json",
+            crossDomain: true,
+            headers: {
+                'x-access-token': tokens
+            },
+            success: function (resp) {
+                alert(resp.message);
+                window.location.reload();
+            },
+            error: function () {
+                alert('Server error! Click ok to reload!');
+                window.location.reload();
+            }
+        })
+    }
+</script>
+
+<!--<script>-->
+    <!--var global6;-->
+    <!--var global7;-->
+    <!--var myTable2;-->
+    <!--var dataset3 = [];-->
+
+    <!--$(document).ready(function () {-->
+
+        <!--$.ajax({-->
+            <!--url: 'https://pva-api.herokuapp.com/api/clerk/manage_requests',-->
+            <!--type: "GET",-->
+            <!--dataType: "json",-->
+            <!--crossDomain: true,-->
+            <!--headers: {'x-access-token': tokens},-->
+            <!--success: function (resp) {-->
+                <!--if (resp.status === 'ok') {-->
+                    <!--for (var i = 0; i < resp.entries2.length; i++) {-->
+                        <!--var dataset2 = [];-->
+                        <!--if (resp.datenow === resp.entries2[i].date) {-->
+                            <!--dataset2.push(resp.entries2[i].diner);-->
+                            <!--dataset2.push(resp.entries2[i].cus_name);-->
+                            <!--dataset2.push(resp.entries2[i].attendees);-->
+                            <!--dataset2.push(resp.entries2[i].res_date);-->
+                            <!--dataset2.push(resp.entries2[i].res_time);-->
+                            <!--dataset2.push(resp.entries2[i].cus_num);-->
+                            <!--dataset2.push(resp.entries2[i].status.toString());-->
+                            <!--dataset2.push(resp.entries2[i].id);-->
+                            <!--dataset2.push(resp.entries2[i].vId.toString());-->
+                            <!--dataset3.push(dataset2);-->
+                        <!--}-->
+                    <!--}-->
+
+                    <!--myTable2 = $('#verifiedtable').DataTable({-->
+                        <!--data: dataset3,-->
+                        <!--columns: [-->
+                            <!--{title: "Restaurant"},-->
+                            <!--{title: "Customer Name"},-->
+                            <!--{title: "No. of Attendees"},-->
+                            <!--{title: "Date"},-->
+                            <!--{title: "Time"},-->
+                            <!--{title: "Contact Number"},-->
+                            <!--{title: "Status"},-->
+                            <!--{title: "Actions"}-->
+                        <!--]-->
+                    <!--});-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+
+    <!--});-->
+
+<!--</script>-->
+
+</html>

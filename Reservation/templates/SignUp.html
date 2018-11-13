@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+<link rel="stylesheet" href="stylesheets/sign-up.css">
+<script src="../static/js/jQuery-2.1.4.min.js"></script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<style type="text/css">
+    
+    /*body{*/
+       /*background-color: #444444;*/
+    /*}*/
+	.login-form {
+		width: 340px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body style="margin-top: 2%;">
+
+
+<div class="form">
+
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="signup">
+          <h1>Sign Up for Free</h1>
+
+          <form>
+
+                  <div class="top-row">
+                    <div class="field-wrap">
+                      <label>
+                        Full Name<span class="req">*</span>
+                      </label>
+                      <input type="text" name="fname" id="fname" required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                      <label>
+                        Phone Number<span class="req">*</span>
+                      </label>
+                      <input type="text" name="cpnum" id="cpnum" required autocomplete="off"/>
+                    </div>
+                  </div>
+
+                  <div class="field-wrap">
+                    <label>
+                      Username<span class="req">*</span>
+                    </label>
+                    <input type="text" name="uname" id="uname" required autocomplete="off"/>
+                  </div>
+
+                  <div class="field-wrap">
+                    <label>
+                      Password<span class="req">*</span>
+                    </label>
+                    <input type="password" name="pword" id="pword" required autocomplete="off"/>
+                  </div>
+          </form>
+            <div class="field-wrap">
+                <button class="button button-block" onclick="register();">Get Started</button>
+          </div>
+        </div>
+
+
+
+
+        <div id="login">
+          <h1>Welcome to Diner's!</h1>
+
+          <form>
+
+                <div class="field-wrap">
+                    <label>
+                      Username<span class="req">*</span>
+                    </label>
+                    <input type="text" id="username" required="required">
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                      Password<span class="req">*</span>
+                    </label>
+                    <input type="password" id="password" required="required">
+                </div>
+          </form>
+            <div class="field-wrap">
+                <button type="submit" class="button button-block" onclick="login2();" >Log In</button>
+          </div>
+        </div>
+
+
+      </div><!-- tab-content -->
+
+</div> <!-- /form -->
+<script src="../templates/app.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE HTML>-->
+<!--<html>-->
+
+<!--<head>-->
+	<!--<title> Login </title>-->
+        <!--<meta charset="utf-8">-->
+        <!--<script src="js/jquery.min.js"></script>-->
+        <!--<script src="js/bootstrap.js"></script>-->
+        <!--<script src="js/bootstrap.min.js"></script>-->
+        <!--<link rel="stylesheet" href="stylesheets/style.css">-->
+    <!--<script src="app.js"></script>-->
+<!--</head>-->
+
+<!--<body>-->
+    <!--<div id="login">-->
+	    <!--<form>-->
+		    <!--<center><h2> Login </h2></center>-->
+            <!--<center><input type="email" id="email" placeholder="Email"></center>-->
+            <!--<p><center><input type="password" id="password" placeholder="Password"></center>-->
+	    <!--</form>-->
+    <!--</div>-->
+    <!--<p><center><button type="submit" onclick="login();">Login</button></center>-->
+    <!--<script src="jQuery-2.1.4.min.js"></script>-->
+    <!--<script src="app.js"></script>-->
+<!--</body>-->
+<!--</html>-->
